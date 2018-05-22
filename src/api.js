@@ -28,7 +28,7 @@ api.get('/', (req, res) => {
 
 // API routes
 api.use('/auth'  , auth);
-api.use('/courses', courses);
+api.use('/courses', course);
 
 
 
