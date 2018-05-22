@@ -1,6 +1,6 @@
 "use strict";
 
-const ModuleModel = require('../models/module');
+const CourseModel = require('../models/course');
 
 
 const create = (req, res) => {
@@ -9,8 +9,8 @@ const create = (req, res) => {
         message: 'The request body is empty'
     });
 
-    ModuleModel.create(req.body)
-        .then(module => res.status(201).json(module))
+    CourseModel.create(req.body)
+        .then(course => res.status(201).json(course))
         .catch(error => res.status(500).json({
             error: 'Internal server error',
             message: error.message
@@ -18,15 +18,15 @@ const create = (req, res) => {
 };
 
 const read   = (req, res) => {
-    ModuleModel.findById(req.params.id).exec()
-        .then(module => {
+    CourseModel.findById(req.params.id).exec()
+        .then(course => {
 
-            if (!module) return res.status(404).json({
+            if (!course) return res.status(404).json({
                 error: 'Not Found',
                 message: `Movie not found`
             });
 
-            res.status(200).json(module)
+            res.status(200).json(course)
 
         })
         .catch(error => res.status(500).json({
@@ -42,8 +42,8 @@ const update = (req, res) => {
         message: 'The request body is empty'
     });
 
-    ModuleModel.findByIdAndUpdate(req.params.id,req.body,{ new: true, runValidators: true}).exec()
-        .then(module => res.status(200).json(module))
+    CourseModel.findByIdAndUpdate(req.params.id,req.body,{ new: true, runValidators: true}).exec()
+        .then(course => res.status(200).json(course))
         .catch(error => res.status(500).json({
             error: 'Internal server error',
             message: error.message
@@ -51,7 +51,7 @@ const update = (req, res) => {
 };
 
 const remove = (req, res) => {
-    ModuleModel.findByIdAndRemove(req.params.id).exec()
+    CourseModel.findByIdAndRemove(req.params.id).exec()
         .then(() => res.status(200).json({message: `Module with id${req.params.id} was deleted`}))
         .catch(error => res.status(500).json({
             error: 'Internal server error',
@@ -60,8 +60,8 @@ const remove = (req, res) => {
 };
 
 const list  = (req, res) => {
-    ModuleModel.find({}).exec()
-        .then(modules => res.status(200).json(modules))
+    CourseModel.find({}).exec()
+        .then(courses => res.status(200).json(courses))
         .catch(error => res.status(500).json({
             error: 'Internal server error',
             message: error.message

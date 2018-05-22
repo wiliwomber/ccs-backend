@@ -2,9 +2,9 @@
 
 const mongoose = require('mongoose');
 
-// Define the movie schema
+// Define the course schema
 
-const ModuleSchema  = new mongoose.Schema({
+const CourseSchema  = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -19,8 +19,8 @@ const ModuleSchema  = new mongoose.Schema({
     }
 });
 
-ModuleSchema.set('versionKey', false);
-ModuleSchema.set('timestamps', true);
+CourseSchema.set('versionKey', false);
+CourseSchema.set('timestamps', true);
 
 // Export the Movie model
-module.exports = mongoose.model('Module', ModuleSchema);
+module.exports = mongoose.model('Course', CourseSchema);
