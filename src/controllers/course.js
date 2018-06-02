@@ -23,7 +23,7 @@ const read   = (req, res) => {
 
             if (!course) return res.status(404).json({
                 error: 'Not Found',
-                message: `Movie not found`
+                message: `Course not found`
             });
 
             res.status(200).json(course)
@@ -52,7 +52,7 @@ const update = (req, res) => {
 
 const remove = (req, res) => {
     CourseModel.findByIdAndRemove(req.params.id).exec()
-        .then(() => res.status(200).json({message: `Module with id${req.params.id} was deleted`}))
+        .then(() => res.status(200).json({message: `Course with id${req.params.id} was deleted`}))
         .catch(error => res.status(500).json({
             error: 'Internal server error',
             message: error.message
@@ -61,7 +61,7 @@ const remove = (req, res) => {
 
 const list  = (req, res) => {
     CourseModel.find({}).exec()
-        .then(courses => res.status(200).json(courses))
+        .then(course => res.status(200).json(course))
         .catch(error => res.status(500).json({
             error: 'Internal server error',
             message: error.message

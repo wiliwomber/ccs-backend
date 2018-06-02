@@ -3,14 +3,14 @@
 const express  = require('express');
 const router   = express.Router();
 
-const CourseConroller = require('../controllers/course');
+const CourseController = require('../controllers/course');
 
 
-router.get('/', CourseConroller.list); // List all movies
-router.post('/', CourseConroller.create); // Create a new movie
-router.get('/:id', CourseConroller.read); // Read a movie by Id
-router.put('/:id', CourseConroller.update); // Update a movie by Id
-router.delete('/:id', CourseConroller.remove); // Delete a movie by Id
+router.get('/', CourseController.list); // List all courses
+router.post('/', CourseController.create); // Create a new course
+router.get('/:id', CourseController.read); // Read a course by Id
+router.put('/:id', CourseController.update); // Update a course by Id
+router.delete('/:id', CourseController.remove); // Delete a course by Id
 
 
 module.exports = router;

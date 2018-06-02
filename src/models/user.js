@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 // Define the user schema
 
+
 const UserSchema  = new mongoose.Schema({
     username: {
         type: String,
@@ -13,6 +14,14 @@ const UserSchema  = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
+    },
+    matriculation: {
+        type: number,
+        required: true
+    },
+    studentsemester: {
+        type: number,
+        required: true
     }
 });
 
