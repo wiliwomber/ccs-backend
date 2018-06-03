@@ -11,11 +11,11 @@ const studyprogramSchema  = new mongoose.Schema({
         required: true
     },
     studyprogramid: {
-        type: number,
+        type: Number,
         required: true
     },
     title: {
-        type: string,
+        type: String,
         required: true
     },
 });
@@ -24,4 +24,4 @@ StudyprogramSchema.set('versionKey', false);
 StudyprogramSchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Studyprogram', StudyprogramSchema)
+module.exports = mongoose.model('Studyprogram', StudyprogramSchema);

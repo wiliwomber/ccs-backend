@@ -7,11 +7,11 @@ const mongoose = require('mongoose');
 const facultySchema  = new mongoose.Schema({
     //Institutionid nötig zur Verknüpfung mit Institution
     institutionid: {
-        type: number,
+        type: Number,
         required: true
     },
     facultyid: {
-        type: number,
+        type: Number,
         required: true
     },
     title: {
@@ -24,4 +24,4 @@ FacultySchema.set('versionKey', false);
 FacultySchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Faculty', FacultySchema)
+module.exports = mongoose.model('Faculty', FacultySchema);

@@ -16,11 +16,11 @@ const UserSchema  = new mongoose.Schema({
         unique: true
     },
     matriculation: {
-        type: number,
+        type: Number,
         required: true
     },
     studentsemester: {
-        type: number,
+        type: Number,
         required: true
     }
 });

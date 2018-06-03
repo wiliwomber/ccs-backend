@@ -28,4 +28,4 @@ ExaminationregulationSchema.set('versionKey', false);
 ExaminationregulationSchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Examinationregulation', ExaminationregulationSchema)
+module.exports = mongoose.model('Examinationregulation', ExaminationregulationSchema);
