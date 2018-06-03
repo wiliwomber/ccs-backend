@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 
 const institutionSchema  = new mongoose.Schema({
     institutionid: {
-        type: number,
+        type: Number,
         required: true
     },
     title: {
@@ -20,4 +20,4 @@ InstitutionSchema.set('versionKey', false);
 InstitutionSchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Institution', InstitutionSchema)
+module.exports = mongoose.model('Institution', InstitutionSchema);

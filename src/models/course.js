@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const CourseSchema  = new mongoose.Schema({
     courseid: {
-        type: number,
+        type: Number,
         required: true
     },
     title: {
@@ -99,4 +99,4 @@ CourseSchema.set('versionKey', false);
 CourseSchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Course', CourseSchema)
+module.exports = mongoose.model('Course', CourseSchema);

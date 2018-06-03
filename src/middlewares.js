@@ -15,7 +15,7 @@ const allowCrossDomain = (req, res, next) => {
     }
     else {
         next();
-    }
+   }
 };
 
 const checkAuthentication = (req, res, next) => {

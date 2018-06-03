@@ -7,23 +7,23 @@ const mongoose = require('mongoose');
 const electivemoduleSchema  = new mongoose.Schema({
     //ID von course und studyprogram nötig zur Verknüpfung
     courseid: {
-        type: number,
+        type: Number,
         required: true
     },
     studyprogramid: {
-        type: number,
+        type: Number,
         required: true
     },
     eligible: {
-        type: boolean,
+        type: Boolean,
         required: true
     },
     recommendedsemester: {
-        type: number,
+        type: Number,
         required: true
     },
     electivemoduleid: {
-        type: number,
+        type: Number,
         required: true
     }
 });
@@ -32,4 +32,4 @@ ElectivemoduleSchema.set('versionKey', false);
 ElectivemoduleSchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Electivemodule', ElectivemoduleSchema)
+module.exports = mongoose.model('Electivemodule', ElectivemoduleSchema);

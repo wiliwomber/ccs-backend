@@ -8,15 +8,15 @@ const mongoose = require('mongoose');
 const generalexaminationregulationsSchema  = new mongoose.Schema({
     //ID von intitutionid nötig zur Verknüpfung
     institutionid: {
-        type: number,
+        type: Number,
         required: true
     },
     generalachievablecredits: {
-        type: number,
+        type: Number,
         required: true
     },
     generalcredithurdles: {//Anders designen
-        type: number,
+        type: Number,
         required: true
     }
 });
@@ -25,4 +25,4 @@ GeneralexaminationregulationsSchema.set('versionKey', false);
 GeneralexaminationregulationsSchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Generalexaminationregulations', GeneralexaminationregulationsSchema)
+module.exports = mongoose.model('Generalexaminationregulations', GeneralexaminationregulationsSchema);
