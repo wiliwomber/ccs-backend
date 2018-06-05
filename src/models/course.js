@@ -2,11 +2,15 @@
 
 const mongoose = require('mongoose');
 
-// Define the Course schema
+// define the course schema
 
 const CourseSchema  = new mongoose.Schema({
     courseid: {
         type: Number,
+        required: true
+    },
+    titlelong: {
+        type: String,
         required: true
     },
     title: {
@@ -61,12 +65,16 @@ const CourseSchema  = new mongoose.Schema({
         type: Number,
         required: true
     },
-    coursedatestart: {
+    start: {
         type: Date,
         required: true
     },
-    coursedateend: {
+    end: {
         type: Date,
+        required: true
+    },
+    dow: {
+        type: Number,
         required: true
     },
     roomnumber: {
