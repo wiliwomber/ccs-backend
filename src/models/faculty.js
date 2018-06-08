@@ -20,8 +20,8 @@ const facultySchema  = new mongoose.Schema({
     }
 });
 
-FacultySchema.set('versionKey', false);
-FacultySchema.set('timestamps', true);
+facultySchema.set('versionKey', false);
+facultySchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Faculty', FacultySchema);
+module.exports = mongoose.model('Faculty', facultySchema);

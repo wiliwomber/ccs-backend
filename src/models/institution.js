@@ -16,8 +16,8 @@ const institutionSchema  = new mongoose.Schema({
     },
 });
 
-InstitutionSchema.set('versionKey', false);
-InstitutionSchema.set('timestamps', true);
+institutionSchema.set('versionKey', false);
+institutionSchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Institution', InstitutionSchema);
+module.exports = mongoose.model('Institution', institutionSchema);

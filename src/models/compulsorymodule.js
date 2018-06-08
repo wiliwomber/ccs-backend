@@ -28,8 +28,8 @@ const compulsorymoduleSchema  = new mongoose.Schema({
     }
 });
 
-CompulsorymoduleSchema.set('versionKey', false);
-CompulsorymoduleSchema.set('timestamps', true);
+compulsorymoduleSchema.set('versionKey', false);
+compulsorymoduleSchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Compulsorymodule', CompulsorymoduleSchema);
+module.exports = mongoose.model('Compulsory Module', compulsorymoduleSchema);

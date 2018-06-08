@@ -28,8 +28,8 @@ const electivemoduleSchema  = new mongoose.Schema({
     }
 });
 
-ElectivemoduleSchema.set('versionKey', false);
-ElectivemoduleSchema.set('timestamps', true);
+electivemoduleSchema.set('versionKey', false);
+electivemoduleSchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Electivemodule', ElectivemoduleSchema);
+module.exports = mongoose.model('Elective Module', electivemoduleSchema);

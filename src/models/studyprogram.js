@@ -18,10 +18,16 @@ const studyprogramSchema  = new mongoose.Schema({
         type: String,
         required: true
     },
+
+  //  compulsorymodulelist: new mongoose.Array(CourseModel.courseid)({}),
+  //  electivemodulelist: new mongoose.Array(CourseModel.courseid)({}),
+
+
+
 });
 
-StudyprogramSchema.set('versionKey', false);
-StudyprogramSchema.set('timestamps', true);
+studyprogramSchema.set('versionKey', false);
+studyprogramSchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Studyprogram', StudyprogramSchema);
+module.exports = mongoose.model('Study program', studyprogramSchema);

@@ -24,8 +24,8 @@ const examinationregulationsSchema  = new mongoose.Schema({
     }
 });
 
-ExaminationregulationSchema.set('versionKey', false);
-ExaminationregulationSchema.set('timestamps', true);
+examinationregulationsSchema.set('versionKey', false);
+examinationregulationsSchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Examinationregulation', ExaminationregulationSchema);
+module.exports = mongoose.model('Examination regulation', examinationregulationsSchema);

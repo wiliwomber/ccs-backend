@@ -107,4 +107,4 @@ CourseSchema.set('versionKey', false);
 CourseSchema.set('timestamps', true);
 
 // Export the Course model
-module.exports = mongoose.model('Course', CourseSchema);
+module.exports= mongoose.model('Course', CourseSchema);
