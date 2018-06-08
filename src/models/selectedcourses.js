@@ -1,7 +1,7 @@
 "use strict";
 
 const mongoose = require('mongoose');
-const CourseModel = require('./app/models/course');
+const CourseModel = require('../models/course');
 
 // Define the selected course module schema
 

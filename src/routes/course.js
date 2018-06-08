@@ -12,7 +12,7 @@ router.get('/:id', CourseController.givecoursesbyId); // Give a course by Id
 router.put('/:id', CourseController.update); // Update a course by Id
 router.delete('/:id', CourseController.remove); // Delete a course by Id
 router.get('/:id', CourseController.findselectedcourses); // List all selected courses by Matriculation
-router.post('/', CourseController.addtoselectedcourses); // Add Course to selected Courses
-router.delete('/', CourseController.removefromselectedcourses); // Remove Course from selected Courses
+router.post('/:id', CourseController.addtoselectedcourses); // Add Course to selected Courses
+router.delete('/:id', CourseController.removefromselectedcourses); // Remove Course from selected Courses
 
 module.exports = router;

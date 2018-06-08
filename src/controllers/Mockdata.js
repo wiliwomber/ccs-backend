@@ -1,5 +1,5 @@
-const User = require('./app/models/user');
-const Course = require ('./app/models/course');
+const User = require('../models/user');
+const Course = require ('../models/course');
 
 // create a new user called Stefan
 
