@@ -34,23 +34,19 @@ const CourseSchema  = new mongoose.Schema({
         required: false
     },
     registrationstart: {
-        type: Date,
+        type: String,
         required: false
     },
     registrationend: {
-        type: Date,
+        type: String,
         required: false
     },
     exam: {
-        type: Date,
+        type: String,
         required: false
     },
-    repeatexamatendofsemester: {
-        type: Boolean,
-        required: false
-    },
-    repeatexamatnextsemester: {
-        type: Boolean,
+    repeatexam: {
+        type: String,
         required: false
     },
     practicecourse: {
@@ -62,15 +58,16 @@ const CourseSchema  = new mongoose.Schema({
         required: false
     },
     start: {
-        type: Date,
+        type: String,
         required: false
     },
     end: {
-        type: Date,
+        type: String,
         required: false
     },
+    //array machen
     dow: {
-        type: Number,
+        type: String,
         required: false
     },
     roomnumber: {
@@ -78,10 +75,6 @@ const CourseSchema  = new mongoose.Schema({
         required: false
     },
     participatorrestriction: {
-        type: Number,
-        required: false
-    },
-    evaluation: {
         type: Number,
         required: false
     },
