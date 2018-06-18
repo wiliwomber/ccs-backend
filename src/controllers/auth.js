@@ -119,18 +119,39 @@ const logout = (req, res) => {
 
 
 const update = (req, res) => {
-    console.log('Backend update für select course');
+    console.log('Backend update für user');
+    console.log(req.body)
    if (Object.keys(req.body).length === 0) return res.status(400).json({
         error: 'Bad Request',
         message: 'The request body is empty'
     });
-   
+
     UserModel.findByIdAndUpdate(req.params.id,req.body,{ new: true, runValidators: true}).exec()
         .then(user => res.status(200).json(user))
         .catch(error => res.status(500).json({
             error: 'Internal server error',
             message: error.message
         }));
+};
+
+
+const read   = (req, res) => {
+    UserModel.findById(req.params.id).exec()
+        .then(user => {
+
+            if (!user) return res.status(404).json({
+                error: 'Not Found',
+                message: `User not found`
+            });
+
+            res.status(200).json(user)
+
+        })
+        .catch(error => res.status(500).json({
+            error: 'Internal Server Error',
+            message: error.message
+        }));
+
 };
 
 
@@ -170,5 +191,6 @@ module.exports = {
     me,
     update,
     Test,
+    read,
     selectCourse2
 };

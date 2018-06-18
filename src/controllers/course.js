@@ -23,7 +23,7 @@ const read   = (req, res) => {
 
             if (!course) return res.status(404).json({
                 error: 'Not Found',
-                message: `Movie not found`
+                message: `Course not found`
             });
 
             res.status(200).json(course)
