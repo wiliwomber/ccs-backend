@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="d82335d2-d16d-4418-8f04-5441d568e8b2" name="Default" comment="" />
+=======
     <list default="true" id="d82335d2-d16d-4418-8f04-5441d568e8b2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+>>>>>>> workingjojo
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +29,18 @@
       <file leaf-file-name="course.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/course.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="750">
               <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="222">
+              <caret line="54" column="6" lean-forward="true" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
+=======
+            <state relative-caret-position="162">
+              <caret line="50" column="6" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+>>>>>>> workingjojo
+>>>>>>> 7e36ce9bceb59f5876a7c8ffb8cde81d05a31267
             </state>
           </provider>
         </entry>
@@ -603,6 +617,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/course.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="750">
           <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
         </state>
@@ -612,6 +627,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="222">
+          <caret line="54" column="6" lean-forward="true" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
+=======
+        <state relative-caret-position="162">
+          <caret line="50" column="6" lean-forward="true" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+>>>>>>> workingjojo
+>>>>>>> 7e36ce9bceb59f5876a7c8ffb8cde81d05a31267
         </state>
       </provider>
     </entry>
