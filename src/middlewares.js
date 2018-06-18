@@ -11,7 +11,7 @@ const allowCrossDomain = (req, res, next) => {
 
     // intercept OPTIONS method
     if ('OPTIONS' == req.method) {
-        res.status(200).send(200);
+        res.status(200).sendStatus(200);
     }
     else {
         next();
@@ -24,14 +24,14 @@ const checkAuthentication = (req, res, next) => {
     const token = req.headers['x-access-token'];
 
     if (!token)
-        return res.status(401).send({
+        return res.status(401).sendStatus({
             error: 'Unauthorized',
             message: 'No token provided in the request'
         });
 
     // verifies secret and checks exp
     jwt.verify(token, config.JwtSecret, (err, decoded) => {
-        if (err) return res.status(401).send({
+        if (err) return res.status(401).sendStatus({
             error: 'Unauthorized',
             message: 'Failed to authenticate token.'
         });
@@ -40,6 +40,7 @@ const checkAuthentication = (req, res, next) => {
         req.userId = decoded.id;
         next();
     });
+
 
 
 };
