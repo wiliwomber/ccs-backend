@@ -19,17 +19,16 @@ api.use(bodyParser.urlencoded({ extended: false }));
 api.use(middlewares.allowCrossDomain);
 
 
+
 // Basic route
 api.get('/', (req, res) => {
     res.json({
-        name: 'CampusCourseScheduler Backend'
+        name: 'ccs-backend'
     });
 });
 
 // API routes
 api.use('/auth'  , auth);
 api.use('/courses', course);
-
-
 
 module.exports = api;
