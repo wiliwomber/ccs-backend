@@ -19,31 +19,40 @@ const allowCrossDomain = (req, res, next) => {
 };
 
 const checkAuthentication = (req, res, next) => {
-
     // check header or url parameters or post parameters for token
-    const token = req.headers['x-access-token'];
 
-    if (!token)
-        return res.status(401).sendStatus({
-            error: 'Unauthorized',
-            message: 'No token provided in the request'
+    const token = req.headers['authorization'];
+
+    if (token === undefined) {
+        return res.status(400).send({
+            error: 'Bad Request',
+            message: 'No authorization token included'
         });
+    }
+    const jwtToken = token.split(' ')[1];
+
+    if (!jwtToken) {
+        return res.status(401).send({
+            error: 'Unauthorized',
+            message: 'Invalid token in request.'
+        });
+    }
+
 
     // verifies secret and checks exp
-    jwt.verify(token, config.JwtSecret, (err, decoded) => {
-        if (err) return res.status(401).sendStatus({
-            error: 'Unauthorized',
-            message: 'Failed to authenticate token.'
-        });
+    jwt.verify(jwtToken, config.JwtSecret, (err, decoded) => {
+        if (err)
+            return res.status(401).send({
+                error: 'Unauthorized',
+                message: 'Failed to authenticate token.'
+            });
 
         // if everything is good, save to request for use in other routes
         req.userId = decoded.id;
         next();
     });
-
-
-
 };
+
 
 const errorHandler = (err, req, res, next) => {
     if (res.headersSent) {

@@ -10,12 +10,11 @@ const UserModel  = require('../models/user');
 
 router.post('/login', AuthController.login);
 router.post('/register', AuthController.register);
-    router.get('' +
-        '' +
-        '  e', middlewares.checkAuthentication , AuthController.me);
+router.get('/me', middlewares.checkAuthentication , AuthController.me);
 router.get('/logout', AuthController.logout);
-router.post('/update', AuthController.update);
-router.put('/:id', AuthController.update); // Update a user by Id
+router.put('/update', middlewares.checkAuthentication, AuthController.update);
+router.put('/selectCourse', middlewares.checkAuthentication, AuthController.selectCourse);
+router.put('/deSelectCourse', middlewares.checkAuthentication, AuthController.deSelectCourse);
 router.get('/:id', AuthController.read);
 router.post('/select', AuthController.Test);
 

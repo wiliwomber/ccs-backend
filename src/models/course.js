@@ -67,7 +67,7 @@ const CourseSchema  = new mongoose.Schema({
     },
     //array machen
     dow: {
-        type: String,
+        type: [Number],
         required: false
     },
     roomnumber: {

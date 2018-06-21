@@ -10,11 +10,17 @@ const create = (req, res) => {
     });
 
     CourseModel.create(req.body)
-        .then(course => res.status(201).json(course))
-        .catch(error => res.status(500).json({
-            error: 'Internal server error',
-            message: error.message
-        }));
+        .then(course => {res.status(201).json(course)})
+        .catch(error => {
+            res.status(500).json({
+                error: 'Internal server error',
+                message: error.message
+
+            });
+            console.log(error);
+
+        })
+    ;
 };
 
 const read   = (req, res) => {
