@@ -95,7 +95,7 @@ const CourseSchema  = new mongoose.Schema({
         required: false
     },
     selectedSemester: {
-        type: Number,
+        type: String,
         required: false,
     }
 });

@@ -117,8 +117,6 @@ const logout = (req, res) => {
 
 
 const update = (req, res) => {
-    console.log('Backend update für user');
-    console.log(req.body)
    if (Object.keys(req.body).length === 0) return res.status(400).json({
         error: 'Bad Request',
         message: 'The request body is empty'
@@ -147,8 +145,6 @@ const update = (req, res) => {
 
 //add course to database so that it will be displayed in calendar
 const selectCourse = (req, res) => {
-    console.log('Backend update für user');
-    console.log(req.body)
     if (Object.keys(req.body).length === 0) return res.status(400).json({
         error: 'Bad Request',
         message: 'The request body is empty'
