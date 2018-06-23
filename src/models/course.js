@@ -49,8 +49,8 @@ const CourseSchema  = new mongoose.Schema({
         type: String,
         required: false
     },
-    practicecourse: {
-        type: Boolean,
+    courseType: {
+        type: String,
         required: false
     },
     semesterperiodsperweek: {
@@ -58,6 +58,10 @@ const CourseSchema  = new mongoose.Schema({
         required: false
     },
     start: {
+        type: String,
+        required: false
+    },
+    day: {
         type: String,
         required: false
     },
@@ -71,7 +75,7 @@ const CourseSchema  = new mongoose.Schema({
         required: false
     },
     roomnumber: {
-        type: Number,
+        type: String,
         required: false
     },
     participatorrestriction: {
@@ -89,6 +93,10 @@ const CourseSchema  = new mongoose.Schema({
     public: {
         type: Boolean,
         required: false
+    },
+    selectedSemester: {
+        type: Number,
+        required: false,
     }
 });
 
