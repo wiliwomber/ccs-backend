@@ -18,7 +18,18 @@ const UserSchema  = new mongoose.Schema({
         type: String,
         required: true,
     },
-    selectedCourses: [{type: mongoose.Schema.Types.ObjectId, ref: 'CourseSchema'}]
+    chosen : {
+
+    },
+    chosenCourses: [{
+        course: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'CourseSchema'
+        },
+        semester: {
+            type: Number
+        }
+    }],
 
 });
 
