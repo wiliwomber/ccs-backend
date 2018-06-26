@@ -83,7 +83,11 @@ const CourseSchema  = new mongoose.Schema({
         required: false
     },
     comment: {
-        type: String,
+        type: [String],
+        required: false
+    },
+    likes: {
+        type: Number,
         required: false
     },
     tag: {

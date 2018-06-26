@@ -18,9 +18,6 @@ const UserSchema  = new mongoose.Schema({
         type: String,
         required: true,
     },
-    chosen : {
-
-    },
     chosenCourses: [{
         course: {
             type: mongoose.Schema.Types.ObjectId,
