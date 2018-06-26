@@ -82,14 +82,14 @@ const readTag   = (req, res) => {
             message: error.message
         }));
 
-    const listByTitle  = (req, res) => {
-        CourseModel.find({'title':'req'}).exec()
-            .then(courses => res.status(200).json(courses))
-            .catch(error => res.status(500).json({
-                error: 'Internal server error',
-                message: error.message
-            }));
-    };
+ //   const listByTitle  = (req, res) => {
+ //       CourseModel.find({'title':'req'}).exec()
+ //           .then(courses => res.status(200).json(courses))
+ //           .catch(error => res.status(500).json({
+ //               error: 'Internal server error',
+ //               message: error.message
+ //           }));
+ //   };
 
 
 
@@ -105,6 +105,6 @@ module.exports = {
     remove,
     list,
     readTag,
-    listByTitle,
+  //  listByTitle,
 };
 

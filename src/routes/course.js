@@ -12,6 +12,7 @@ router.get('/:id', CourseController.read); // Read a course by Id
 router.put('/:id', CourseController.update); // Update a course by Id
 router.delete('/:id', CourseController.remove); // Delete a course by Id
 router.get('/', CourseController.readTag); // List all courses by Tag
-router.get ('/', CourseController.listByTitle); // List all courses by Title
+//router.get ('/', CourseController.listByTitle); // List all courses by Title
 
 module.exports = router;
+
