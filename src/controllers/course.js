@@ -74,6 +74,28 @@ const list  = (req, res) => {
         }));
 };
 
+const readTag   = (req, res) => {
+    CourseModel.find({'tag':'req'}).exec()
+        .then(courses => res.status(200).json(courses))
+        .catch(error => res.status(500).json({
+            error: 'Internal server error',
+            message: error.message
+        }));
+
+ //   const listByTitle  = (req, res) => {
+ //       CourseModel.find({'title':'req'}).exec()
+ //           .then(courses => res.status(200).json(courses))
+ //           .catch(error => res.status(500).json({
+ //               error: 'Internal server error',
+ //               message: error.message
+ //           }));
+ //   };
+
+
+
+
+};
+
 
 
 module.exports = {
@@ -81,5 +103,8 @@ module.exports = {
     read,
     update,
     remove,
-    list
+    list,
+    readTag,
+  //  listByTitle,
 };
+

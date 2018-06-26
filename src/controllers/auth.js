@@ -96,10 +96,8 @@ const register = (req,res) => {
 
 
 const me = (req, res) => {
-    console.log('ich bin bei me im backend');
     UserModel.findById(req.userId).exec()
         .then(user => {
-            console.log(user.selectedCourses);
             if (!user) return res.status(404).json({
                 error: 'Not Found',
                 message: `User not found`
@@ -119,8 +117,6 @@ const logout = (req, res) => {
 
 
 const update = (req, res) => {
-    console.log('Backend update für user');
-    console.log(req.body)
    if (Object.keys(req.body).length === 0) return res.status(400).json({
         error: 'Bad Request',
         message: 'The request body is empty'
@@ -146,9 +142,9 @@ const update = (req, res) => {
         }));
 };
 
+
+//add course to database so that it will be displayed in calendar
 const selectCourse = (req, res) => {
-    console.log('Backend update für user');
-    console.log(req.body)
     if (Object.keys(req.body).length === 0) return res.status(400).json({
         error: 'Bad Request',
         message: 'The request body is empty'
@@ -174,16 +170,13 @@ const selectCourse = (req, res) => {
         }));
 };
 
+
+//deselect a course so that its not in calendar anymore
 const deSelectCourse = (req, res) => {
-    console.log('Backend update für user');
-    console.log(req.body)
     if (Object.keys(req.body).length === 0) return res.status(400).json({
         error: 'Bad Request',
         message: 'The request body is empty'
     });
-
-   // let update = {$push: {selectedCourses: req.body.courseId}};
-
     UserModel.findByIdAndUpdate(req.userId, req.body)
         .exec()
         .then(user => {
