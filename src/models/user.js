@@ -18,6 +18,10 @@ const UserSchema  = new mongoose.Schema({
         type: String,
         required: true,
     },
+    courseOfStudies: {
+      type: String,
+      required: false
+    },
     chosenCourses: [{
         course: {
             type: mongoose.Schema.Types.ObjectId,

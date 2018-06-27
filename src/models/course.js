@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const CourseSchema  = new mongoose.Schema({
     titlelong: {
         type: String,
-        required: false
+        required: true
     },
     title: {
         type: String,
@@ -23,15 +23,15 @@ const CourseSchema  = new mongoose.Schema({
     },
     semester: {
         type: String,
-        required: false
+        required: true
     },
     lecturer: {
         type: String,
-        required: false
+        required: true
     },
     chair: {
         type: String,
-        required: false
+        required: true
     },
     registrationstart: {
         type: String,
@@ -51,36 +51,32 @@ const CourseSchema  = new mongoose.Schema({
     },
     courseType: {
         type: String,
-        required: false
+        required: true
     },
     semesterperiodsperweek: {
         type: Number,
-        required: false
+        required: true
     },
     start: {
         type: String,
-        required: false
+        required: true
     },
     day: {
         type: String,
-        required: false
+        required: true
     },
     end: {
         type: String,
-        required: false
+        required: true
     },
     //array machen
     dow: {
         type: [Number],
-        required: false
+        required: true
     },
     roomnumber: {
         type: String,
-        required: false
-    },
-    participatorrestriction: {
-        type: Number,
-        required: false
+        required: true
     },
     comment: {
         type: [String],
@@ -98,10 +94,6 @@ const CourseSchema  = new mongoose.Schema({
         type: Boolean,
         required: false
     },
-    selectedSemester: {
-        type: Number,
-        required: false,
-    }
 });
 
 CourseSchema.set('versionKey', false);
