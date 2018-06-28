@@ -15,7 +15,7 @@ const UserSchema  = new mongoose.Schema({
         unique: true
     },
     semester: {
-        type: String,
+        type: Number,
         required: true,
     },
     courseOfStudies: {
