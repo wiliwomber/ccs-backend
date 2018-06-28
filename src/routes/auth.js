@@ -1,24 +1,20 @@
 "use strict";
-
-const express        = require('express');
+const express        = require("express");
 const router         = express.Router();
-
-const middlewares    = require('../middlewares');
-const AuthController = require('../controllers/auth');
-const UserModel  = require('../models/user');
-
-
-router.post('/login', AuthController.login);
-router.post('/register', AuthController.register);
-router.get('/me', middlewares.checkAuthentication , AuthController.me);
-router.get('/logout', AuthController.logout);
-router.put('/update', middlewares.checkAuthentication, AuthController.update);
-router.put('/selectCourse', middlewares.checkAuthentication, AuthController.selectCourse);
-router.put('/deSelectCourse', middlewares.checkAuthentication, AuthController.deSelectCourse);
-router.get('/:id', AuthController.read);
-router.post('/select', AuthController.Test);
+const middlewares    = require("../middlewares");
+const authController = require("../controllers/auth");
+const userModel      = require("../models/user");
 
 
+router.post("/login", authController.login);
+router.post("/register", authController.register);
+router.get("/me", middlewares.checkAuthentication, authController.me);
+router.get("/logout", authController.logout);
+router.put("/update", middlewares.checkAuthentication, authController.update);
+router.put("/selectCourse", middlewares.checkAuthentication, authController.selectCourse);
+router.put("/deSelectCourse", middlewares.checkAuthentication, authController.deSelectCourse);
+router.get("/:id", authController.read);
+router.post("/select", authController.Test);
 
 
 module.exports = router;

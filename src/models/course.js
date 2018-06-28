@@ -1,11 +1,10 @@
 "use strict";
+const mongoose = require("mongoose");
 
-const mongoose = require('mongoose');
 
-// Define the course schema
+const courseSchema  = new mongoose.Schema({
 
-const CourseSchema  = new mongoose.Schema({
-    titlelong: {
+    titleLong: {
         type: String,
         required: false
     },
@@ -33,11 +32,11 @@ const CourseSchema  = new mongoose.Schema({
         type: String,
         required: false
     },
-    registrationstart: {
+    registrationStart: {
         type: String,
         required: false
     },
-    registrationend: {
+    registrationEnd: {
         type: String,
         required: false
     },
@@ -45,7 +44,7 @@ const CourseSchema  = new mongoose.Schema({
         type: String,
         required: false
     },
-    repeatexam: {
+    repeatExam: {
         type: String,
         required: false
     },
@@ -53,7 +52,7 @@ const CourseSchema  = new mongoose.Schema({
         type: String,
         required: false
     },
-    semesterperiodsperweek: {
+    semesterPeriodsPerWeek: {
         type: Number,
         required: false
     },
@@ -69,16 +68,15 @@ const CourseSchema  = new mongoose.Schema({
         type: String,
         required: false
     },
-    //array machen
     dow: {
         type: [Number],
         required: false
     },
-    roomnumber: {
+    roomNumber: {
         type: String,
         required: false
     },
-    participatorrestriction: {
+    participatorRestriction: {
         type: Number,
         required: false
     },
@@ -100,8 +98,8 @@ const CourseSchema  = new mongoose.Schema({
     }
 });
 
-CourseSchema.set('versionKey', false);
-CourseSchema.set('timestamps', true);
+courseSchema.set("versionKey", false);
+courseSchema.set("timestamps", true);
 
 // Export the Movie model
-module.exports = mongoose.model('Course', CourseSchema);
+module.exports = mongoose.model("course", courseSchema);

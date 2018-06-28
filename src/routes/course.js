@@ -1,18 +1,16 @@
 "use strict";
-
-const express  = require('express');
-const router   = express.Router();
-
-const CourseController = require('../controllers/course');
+const express          = require("express");
+const router           = express.Router();
+const courseController = require("../controllers/course");
 
 
-router.get('/', CourseController.list); // List all course
-router.post('/', CourseController.create); // Create a new course
-router.get('/:id', CourseController.read); // Read a course by Id
-router.put('/:id', CourseController.update); // Update a course by Id
-router.delete('/:id', CourseController.remove); // Delete a course by Id
-router.get('/', CourseController.readTag); // List all courses by Tag
-//router.get ('/', CourseController.listByTitle); // List all courses by Title
+router.get("/", courseController.list); // List all course
+router.post("/", courseController.create); // Create a new course
+router.get("/:id", courseController.read); // Read a course by Id
+router.put("/:id", courseController.update); // Update a course by Id
+router.delete("/:id", courseController.remove); // Delete a course by Id
+router.get("/", courseController.readTag); // List all courses by Tag
+
 
 module.exports = router;
 

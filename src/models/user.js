@@ -1,10 +1,10 @@
 "use strict";
-
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 
 
 const UserSchema  = new mongoose.Schema({
+    
     username: {
         type: String,
         required: true
@@ -18,22 +18,20 @@ const UserSchema  = new mongoose.Schema({
         type: String,
         required: true,
     },
-    chosen : {
-
+    chosen: {
     },
     chosenCourses: [{
         course: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'CourseSchema'
+            ref: "courseSchema"
         },
         semester: {
             type: Number
         }
     }],
-
 });
 
-UserSchema.set('versionKey', false);
+userSchema.set("versionKey", false);
 
 // Export the Movie model
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model("user", userSchema);
