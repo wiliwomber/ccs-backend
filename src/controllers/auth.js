@@ -44,6 +44,7 @@ const login = (req,res) => {
 };
 
 
+
 const register = (req,res) => {
 
     if (!Object.prototype.hasOwnProperty.call(req.body, 'password')) return res.status(400).json({
@@ -60,6 +61,10 @@ const register = (req,res) => {
         error: 'Bad Request',
         message: 'The request body must contain a semester property'
     });
+    if (!Object.prototype.hasOwnProperty.call(req.body, 'courseOfStudies')) return res.status(400).json({
+        error: 'Bad Request',
+        message: 'The request body must contain a courseOfStudies property'
+    });
 
     const user = Object.assign(req.body, {password: bcrypt.hashSync(req.body.password, 8)});
 
@@ -69,7 +74,7 @@ const register = (req,res) => {
 
             // if user is registered without errors
             // create a token
-            const token = jwt.sign({ id: user._id, username: user.username, semester: user.semester, selectedCourses: user.selectedCourses}, config.JwtSecret, {
+            const token = jwt.sign({ id: user._id, username: user.username, semester: user.semester, selectedCourses: user.selectedCourses, courseOfStudies: user.courseOfStudies}, config.JwtSecret, {
                 expiresIn: 86400 // expires in 24 hours
             });
 
