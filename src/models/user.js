@@ -15,10 +15,12 @@ const UserSchema  = new mongoose.Schema({
         unique: true
     },
     semester: {
-        type: String,
+        type: Number,
         required: true,
     },
-    chosen: {
+    courseOfStudies: {
+      type: String,
+      required: false
     },
     chosenCourses: [{
         course: {
