@@ -12,7 +12,7 @@ const course = require('./routes/course');
 const api = express();
 
 
-// Adding Basic Middlewares
+//adding basic middlewares
 api.use(helmet());
 api.use(bodyParser.json());
 api.use(bodyParser.urlencoded({ extended: false }));
@@ -20,14 +20,14 @@ api.use(middlewares.allowCrossDomain);
 
 
 
-// Basic route
+//basic route
 api.get('/', (req, res) => {
     res.json({
         name: 'ccs-backend'
     });
 });
 
-// API routes
+//API routes
 api.use('/auth'  , auth);
 api.use('/courses', course);
 

@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-// Define the course schema
+//define the course schema
 
 const CourseSchema  = new mongoose.Schema({
     titlelong: {
@@ -69,7 +69,6 @@ const CourseSchema  = new mongoose.Schema({
         type: String,
         required: true
     },
-    //array machen
     dow: {
         type: [Number],
         required: true
@@ -99,5 +98,5 @@ const CourseSchema  = new mongoose.Schema({
 CourseSchema.set('versionKey', false);
 CourseSchema.set('timestamps', true);
 
-// Export the Movie model
+//export the course model
 module.exports = mongoose.model('Course', CourseSchema);

@@ -7,14 +7,14 @@ const api        = require('./src/api');
 const config     = require('./src/config');
 
 
-// Set the port to the API.
+//set the port to the API.
 api.set('port', config.port);
 
 //Create a http server based on Express
 const server = http.createServer(api);
 
 
-//Connect to the MongoDB database; then start the server
+//connect to the MongoDB database; then start the server
 mongoose
     .connect(config.mongoURI)
     .then(() => server.listen(config.port))

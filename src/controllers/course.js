@@ -2,7 +2,7 @@
 
 const CourseModel = require('../models/course');
 
-
+//create course
 const create = (req, res) => {
     if (Object.keys(req.body).length === 0) return res.status(400).json({
         error: 'Bad Request',
@@ -23,6 +23,8 @@ const create = (req, res) => {
     ;
 };
 
+
+//give information on course by id
 const read   = (req, res) => {
     CourseModel.findById(req.params.id).exec()
         .then(course => {
@@ -39,9 +41,10 @@ const read   = (req, res) => {
             error: 'Internal Server Error',
             message: error.message
         }));
-
 };
 
+
+//update course
 const update = (req, res) => {
     if (Object.keys(req.body).length === 0) return res.status(400).json({
         error: 'Bad Request',
@@ -56,6 +59,8 @@ const update = (req, res) => {
         }));
 };
 
+
+//remove course by id
 const remove = (req, res) => {
     CourseModel.findByIdAndRemove(req.params.id).exec()
         .then(() => res.status(200).json({message: `Module with id${req.params.id} was deleted`}))
@@ -65,6 +70,8 @@ const remove = (req, res) => {
         }));
 };
 
+
+//give all courses
 const list  = (req, res) => {
     CourseModel.find({}).exec()
         .then(courses => res.status(200).json(courses))

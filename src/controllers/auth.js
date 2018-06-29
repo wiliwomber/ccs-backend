@@ -7,7 +7,7 @@ const config     = require('../config');
 const UserModel  = require('../models/user');
 const CourseModel  = require('../models/course');
 
-
+//user login
 const login = (req,res) => {
     if (!Object.prototype.hasOwnProperty.call(req.body, 'password')) return res.status(400).json({
         error: 'Bad Request',
@@ -44,7 +44,7 @@ const login = (req,res) => {
 };
 
 
-
+//user signup
 const register = (req,res) => {
 
     if (!Object.prototype.hasOwnProperty.call(req.body, 'password')) return res.status(400).json({
@@ -99,7 +99,7 @@ const register = (req,res) => {
 
 };
 
-
+//give information on user that is just logged in
 const me = (req, res) => {
     UserModel.findById(req.userId).exec()
         .then(user => {
@@ -116,11 +116,14 @@ const me = (req, res) => {
         }));
 };
 
+
+//user logout
 const logout = (req, res) => {
     res.status(200).send({ token: null });
 };
 
 
+//update user
 const update = (req, res) => {
    if (Object.keys(req.body).length === 0) return res.status(400).json({
         error: 'Bad Request',
@@ -201,6 +204,7 @@ const deSelectCourse = (req, res) => {
 };
 
 
+//give information on user by id
 const read   = (req, res) => {
     UserModel.findById(req.params.id).exec()
         .then(user => {
